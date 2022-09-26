@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en" <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Tp n12 Reloj</title>
+<link rel="stylesheet" href="style.css">
+
+<head>
+    <script class="reloj">
+        function ver_hora() {
+
+            var mihora = new Date();
+            var horas = mihora.getHours().toString();
+            var minutos = mihora.getMinutes().toString();
+            if (minutos.lenght == 1) minutos = "0" + minutos;
+            var segundos = mihora.getSeconds().toString();
+            if (segundos.lenght == 1) segundos = "0" + segundos;
+            document.forms[0].mireloj.value = horas + ":" + minutos + ":" + segundos + "hs";
+        }
+    </script>
+</head>
+
+<body>
+    <h1>Reloj Digital</h1>
+    <form>
+        <p aling="center">
+            <input class="reloj" type="text" size="10" name="mireloj">
+        </p>
+    </form>
+    <script>
+        var r = setInterval("ver_hora()", 500);
+    </script>
+</body>
+
+</html>
